@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Hexo-Theme-Sakura | hhxlz98</title>
+  <title itemprop="name">Mac开发学习——frame和bounds | hhxlz98</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -73,7 +73,7 @@
     <div class="focusinfo no-select">
       <div class="header-tou">
         <a href="https://hhxlz98.github.io">
-          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
         </a>
       </div>
       <div class="header-info">
@@ -389,23 +389,23 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/photo_001_01.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/photo_001_01.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Hexo-Theme-Sakura</h1>
+      Mac开发学习——frame和bounds</h1>
       <p class="entry-census">
         <span>
-          <a href="hojun.cn">
-            <img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg">
+          <a href="https://hhxlz98.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
           </a>
         </span>
         <span>
-          <a href="hojun.cn">hojun</a>
+          <a href="https://hhxlz98.github.io">hhxlz98</a>
         </span>
         <span class="bull">
         ·</span>
-        2018-12-12<span class="bull">
+        2019-9-19<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -419,290 +419,157 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>hexo-theme-sakura主题 <a href="https://github.com/honjun/hexo-theme-sakura/blob/master/README.md" target="_blank" rel="noopener">English document</a></p>
-<p>基于WordPress主题<a href="https://github.com/mashirozx/Sakura/" target="_blank" rel="noopener">Sakura</a>修改成Hexo的主题。</p>
-<p><a href="https://sakura.hojun.cn" target="_blank" rel="noopener">demo预览</a></p>
-<p>正在开发中……</p>
-<p><img src="https://wx3.sinaimg.cn/large/006bYVyvly1g069tuf42oj312w0m8ndq.jpg" alt></p>
-<h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>若你是使用者，加群QQ: 801511924</p>
-<p>若你是创作者，加群QQ: 194472590</p>
-<h2 id="主题特性"><a href="#主题特性" class="headerlink" title="主题特性"></a>主题特性</h2><ul>
-<li>首页大屏视频</li>
-<li>首页随机封面</li>
-<li>图片懒加载</li>
-<li>valine评论</li>
-<li>fancy-box相册</li>
-<li>pjax支持，音乐不间断</li>
-<li>aplayer音乐播放器</li>
-<li>多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）</li>
+          <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>对于iOS&amp;Mac开发者来说，frame和bounds肯定不陌生。目前其实有很多讲解frame和bounds的博客，那为什么我还要单独写一篇呢？</p>
+<ul>
+<li>博客质量参差不齐，在多浏览几个博客之后反而容易产生疑惑。</li>
+<li>初学时仅凭看一下两者的定义就想在实际中自如应用是很难的，使用时可能临场蒙对，但是你不能保证每一次都可以猜对，所以对于我个人来说有必要对其的使用进行实际练习和总结，对其产生清晰的认识。</li>
+<li>其外，目前网络上大部分博客资料都是针对iOS的，Mac虽然与其有一定相似性但是我个人认为还是有必要单独写一篇针对Mac的讲解，毕竟作为一个Mac开发初学者，经历过查阅资料只有针对iOS开发的窘境，而实际使用又需要自己去探索Cocoa是否支持，操作起来有什么差异等等。</li>
 </ul>
-<h2 id="赞赏作者"><a href="#赞赏作者" class="headerlink" title="赞赏作者"></a>赞赏作者</h2><p>如果喜欢hexo-theme-sakura主题，可以考虑资助一下哦~非常感激！</p>
-<p><a href="https://www.paypal.me/hojuncn" target="_blank" rel="noopener">paypal</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg" target="_blank" rel="noopener">Alipay 支付宝</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanSQ.jpg" target="_blank" rel="noopener">WeChat Pay 微信支付</a></p>
-<h2 id="未完善的使用教程"><a href="#未完善的使用教程" class="headerlink" title="未完善的使用教程"></a>未完善的使用教程</h2><p>那啥？老实说我目前也不是很有条理233333333~</p>
-<h2 id="1、主题下载安装"><a href="#1、主题下载安装" class="headerlink" title="1、主题下载安装"></a>1、主题下载安装</h2><p><a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">hexo-theme-sakura</a>建议下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦咯。</p>
-<p>下载好后解压到博客根目录（不是主题目录哦，重复的选择替换）。接着在命令行（cmd、bash）运行<code>npm i</code>安装依赖。</p>
-<h2 id="2、主题配置"><a href="#2、主题配置" class="headerlink" title="2、主题配置"></a>2、主题配置</h2><h3 id="博客根目录下的-config配置"><a href="#博客根目录下的-config配置" class="headerlink" title="博客根目录下的_config配置"></a>博客根目录下的_config配置</h3><p>站点</p>
-<pre><code class="yml"># Site
-title: 你的站点名
-subtitle:
-description: 站点简介
-keywords:
-author: 作者名
-language: zh-cn
-timezone:</code></pre>
-<p>部署</p>
-<pre><code class="yml">deploy:
-  type: git
-  repo: 
-    github: 你的github仓库地址
-    # coding: 你的coding仓库地址
-  branch: master</code></pre>
-<p>备份 （使用hexo b发布备份到远程仓库）</p>
-<pre><code class="yml">backup:
-  type: git
-  message: backup my blog of https://honjun.github.io/
-  repository:
-    # 你的github仓库地址,备份分支名  （建议新建backup分支）
-    github: https://github.com/honjun/honjun.github.io.git,backup
-    # coding: https://git.coding.net/hojun/hojun.git,backup
-</code></pre>
-<h3 id="主题目录下的-config配置"><a href="#主题目录下的-config配置" class="headerlink" title="主题目录下的_config配置"></a>主题目录下的_config配置</h3><p>其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分</p>
-<pre><code class="yml"># site name
-# 站点名 【改】
-prefixName: さくら荘その
-siteName: hojun
+<h2 id="二、Mac的坐标系统"><a href="#二、Mac的坐标系统" class="headerlink" title="二、Mac的坐标系统"></a>二、Mac的坐标系统</h2><p>OSX系统中视图坐标系统：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_01.png" alt="Mac坐标系统"><br>是不是和数学中常用的坐标轴是一致的，但是可能对于很多习惯iOS系统视图坐标的人来说，可能更习惯视图坐标原地那在左上角，可以通过重写视图的<code>isFlipped</code>函数设置：</p>
+<pre><code>- (BOOL)isFlipped{              //重写在自定义的NSView子类  
+    return YES;
+}</code></pre><p>注：该方法需重写在自定义的NSView的子类中，同时它只能影响以该视图为父视图的视图（下面有例子）。</p>
+<h2 id="三、frame的使用"><a href="#三、frame的使用" class="headerlink" title="三、frame的使用"></a>三、frame的使用</h2><p>Cocoa中使用<code>NSRect</code>给frame或bounds赋值,<code>NSRect</code>其实就是一个C语言的结构：</p>
+<pre><code>typedef CGRect NSRect;          //NSRect其实是CGRect的别名
+struct CGRect {
+    CGPoint origin;             //原点坐标          
+    CGSize size;                //宽高大小
+};
+struct CGPoint {
+    CGFloat x;                  //x轴坐标
+    CGFloat y;                  //y轴坐标
+};
+struct CGSize {
+    CGFloat width;              //宽度
+    CGFloat height;             //高度
+};</code></pre><hr>
+<p>视图的frame定义为视图在其父视图的坐标系的坐标和大小(其中坐标指的是该视图的左下角)：</p>
+<pre><code>NSView *blueView = [[NSView alloc] initWithFrame:NSMakeRect(30, 50, 250, 300)];
+blueView.wantsLayer = YES;
+[blueView.layer setBackgroundColor:[NSColor blueColor].CGColor];
+/* 将blueView作为NSWindow的contentView的子视图 */
+[[self.window contentView] addSubview:blueView];
 
-# favicon and site master avatar
-# 站点的favicon和头像 输入图片路径（下面的配置是都是cdn的相对路径，没有cdn请填写完整路径，建议使用jsdeliver搭建一个cdn啦，先去下载我的cdn替换下图片就行了，简单方便~）【改】
-favicon: /images/favicon.ico
-avatar: /img/custom/avatar.jpg
+NSView *redView = [[NSView alloc] initWithFrame:NSMakeRect(20, 20, 50, 100)];
+redView.wantsLayer = YES;
+[redView.layer setBackgroundColor:[NSColor redColor].CGColor];
+/* 将redView作为blueView的子视图 */
+[blueView addSubview:redView];</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_02.png" alt="frame实例"></p>
+<ul>
+<li>blueView是整个窗口的<code>contnetView</code>的子视图，所以其frame的坐标的指定原点为<code>contnentView</code>的原点；</li>
+<li>同理redView是blueView的子视图，其frame设置的是在blueView的坐标系中的位置；</li>
+<li>同时可以注意到，frame中size的大小是不受视图所在坐标系影响的(单位长度都是一样的)。</li>
+</ul>
+<hr>
+<ul>
+<li><p>flipped视图的区别：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_03.png" alt="flipped视图实例"><br>其中代码实现的唯一改动是blueView是我自定义重写了isFlipped函数的NSView的子类。可以看见当设置blueView的frame时，contnetView的坐标系不变，所以blueView还是在原位置；而blueView视图坐标系统改变导致其下子视图位置改变。</p>
+</li>
+<li><p>tips：<br>Q：redView的子视图会有影响吗？<br>A：不会，由于redView的isFlipped返回值仍是NO，所以其子视图还是以其左下角为原点。</p>
+</li>
+</ul>
+<hr>
+<h2 id="四、bounds的解释"><a href="#四、bounds的解释" class="headerlink" title="四、bounds的解释"></a>四、bounds的解释</h2><p>可能到这里你会和我一样感到奇怪，貌似一个frame已经够用了：我们已经可以将视图放到我们想要的位置了，那为什么还需要bounds呢？</p>
+<p>这里先引用一下苹果官方文档对bounds的解释：</p>
+<blockquote>
+<p>The view’s bounds rectangle, which expresses its location and size in its own coordinate system.</p>
+</blockquote>
+<p>如果用中文来翻译的话：bounds——表示其自身坐标系统中的位置和大小。这是一句耐人寻味的话，很难从定义中明白其存在意义，至少初学时我是不太理解的，所以还是需要代码试验和理解：</p>
+<pre><code>NSView *redView = [[NSView alloc] initWithFrame:NSMakeRect(100, 120, 50, 100)];
+redView.wantsLayer = YES;
+[redView.layer setBackgroundColor:[NSColor redColor].CGColor];
+[[self.window contentView] addSubview:redView];
+NSLog(@&quot;%@&quot;, NSStringFromRect(redView.bounds));
 
-# 站点url 【改】
-url: https://sakura.hojun.cn
+输出：{{0, 0}, {50, 100}}</code></pre><p>可以看出视图的bounds默认origin为(0, 0),size为frame的size(实际中bounds的getter函数就是这么实现的)。</p>
+<hr>
+<p>接下来我们试验一下修改bounds会发生什么：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_04.png" alt="修改bounds"></p>
+<p>可以看到修改bounds对view本身对frame没有任何影响，那我们尝试在其内加入子视图：</p>
+<ul>
+<li><p>修改origin：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_05.png" alt="修改origin"><br>修改父视图的bounds的origin之后，父视图的位置不变(父视图frame未变且父视图所在坐标系统未变)，而对于其子视图所在坐标系(即父视图坐标系)，虽然子视图frame未变，但是其所在坐标系原点改变，则相同frame下子视图和父视图相对位置发生变化，所以视觉上其显示位置改变。</p>
+</li>
+<li><p>修改size:<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_01_006.png" alt="修改size"><br>修改父视图的bounds的size后，其子视图大小有明显变换。在本例中，父视图的width变为原来的4/5，即200，而子视图的width为100即其一半，因而子视图的width应该占整个父视图的一半(height同理)，所以实际显示中子视图的size都成比例的增加了！(尽管子视图的frame并没有改变，但是其所在坐标系统的size变了)</p>
+</li>
+<li><p>bounds的作用<br>经过上例的验证后我们可以发现，官方对于bounds的解释如此简练，光凭其定义想要去理解是有难度的。但如果从其作用的角度，我们可以将bounds定义为：决定视图本身的坐标系统，该坐标系统会影响其内视图的呈现，即影响视图的子视图。</p>
+</li>
+</ul>
+<h2 id="五、实例：NSScrollView解析"><a href="#五、实例：NSScrollView解析" class="headerlink" title="五、实例：NSScrollView解析"></a>五、实例：NSScrollView解析</h2><p>官方提供的控件——滚动视图中应用了bounds的一定特性，在此进行解析，了解滚动视图的实现和bounds的应用。</p>
+<ul>
+<li>NSScrollView控件的结构：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_07.png" alt="scrollView结构"><br>上图可以看到一个滚动视图控件包含好几个部分，其中绿色部分(NSView)就是我们承载显示内容的部分，其size一般都比<code>ContentView</code>大，这样才有滚动显示的需求。</li>
+</ul>
+<hr>
+<p>先将一个image添加到scrollView的<code>documentView</code>中，给视图添加一个按钮，点击按钮修改不同View的bounds查看效果：</p>
+<ul>
+<li><p>显示部分的代码：</p>
+<pre><code>/* 该图片事先拖入了.xcassets中 */
+NSImage *deerImage = [NSImage imageNamed:@&quot;deer&quot;];
+/* scorllView的bounds默认(0,0,frame.width,frame.height) */
+NSImageView *imageView = [[NSImageView alloc] initWithFrame:self.scrollView.bounds];
+imageView.image = deerImage;
+[imageView setFrameSize:deerImage.size];
+self.scrollView.documentView = imageView;
 
-# 站点介绍（或者说是个人签名）【改】
-description: Live your life with passion! With some drive!
-
-# 站点cdn，没有就为空 【改】  若是cdn为空，一些图片地址就要填完整地址了，比如之前avatar就要填https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg
-cdn: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6
-
-# 开启pjax 【选】
-pjax: 1
-
-# 站点首页的公告信息 【改】
-notice: hexo-Sakura主题已经开源，目前正在开发中...
-
-# 懒加载的加载中图片 【选】
-lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg
-
-# 站点菜单配置 【选】
-menus:
-  首页: { path: /, fa: fa-fort-awesome faa-shake }
-  归档: { path: /archives, fa: fa-archive faa-shake, submenus: { 
-    技术: {path: /categories/技术/, fa: fa-code }, 
-    生活: {path: /categories/生活/, fa: fa-file-text-o }, 
-    资源: {path: /categories/资源/, fa: fa-cloud-download }, 
-    随想: {path: /categories/随想/, fa: fa-commenting-o },
-    转载: {path: /categories/转载/, fa: fa-book }
-  } }
-  清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
-    书单: {path: /tags/悦读/, fa: fa-th-list faa-bounce }, 
-    番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
-    歌单: {path: /music/, fa: fa-headphones },
-    图集: {path: /tags/图集/, fa: fa-photo }
-  } }
-  留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
-  友人帐: { path: /links/, fa: fa-link faa-shake }
-  赞赏: { path: /donate/, fa: fa-heart faa-pulse }
-  关于: { path: /, fa: fa-leaf faa-wrench , submenus: { 
-    我？: {path: /about/, fa: fa-meetup}, 
-    主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
-    Lab: {path: /lab/, fa: fa-cogs },
-  } }
-  客户端: { path: /client/, fa: fa-android faa-vertical }
-  RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
-
-# Home page sort type: -1: newer first，1: older first. 【非】
-homePageSortType: -1
-
-# Home page article shown number) 【非】
-homeArticleShown: 10
-
-# 背景图片 【选】
-bgn: 8
-
-# startdash面板 url, title, desc img 【改】
-startdash: 
-  - {url: /theme-sakura/, title: Sakura, desc: 本站 hexo 主题, img: /img/startdash/sakura.md.png}
-  - {url: http://space.bilibili.com/271849279, title: Bilibili, desc: 博主的b站视频, img: /img/startdash/bilibili.jpg}
-  - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
-
-
-# your site build time or founded date
-# 你的站点建立日期 【改】
-siteBuildingTime: 07/17/2018
-
-
-# 社交按钮(social)  url, img PC端配置 【改】
-social:
-  github: {url: http://github.com/honjun, img: /img/social/github.png}
-  sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
-  wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
-  zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
-  email: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/email.svg}
-  wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
-
-# 社交按钮(msocial)  url, img 移动端配置 【改】
-msocial:
-  github: {url: http://github.com/honjun, fa: fa-github, color: 333}
-  weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
-  qq: {url: https://wpa.qq.com/msgrd?v=3&amp;uin=954655431&amp;site=qq&amp;menu=yes, fa: fa-qq, color: 25c6fe}
-
-# 赞赏二维码（其中wechatSQ是赞赏单页面的赞赏码图片）【改】
-donate:
-  alipay: /img/custom/donate/AliPayQR.jpg
-  wechat: /img/custom/donate/WeChanQR.jpg
-  wechatSQ: /img/custom/donate/WeChanSQ.jpg
-
-# 首页视频地址为https://cdn.jsdelivr.net/gh/honjun/hojun@1.2/Unbroken.mp4，配置如下 【改】
-movies:
-  url: https://cdn.jsdelivr.net/gh/honjun/hojun@1.2
-  # 多个视频用逗号隔开，随机获取。支持的格式目前已知MP4,Flv。其他的可以试下，不保证有用
-  name: Unbroken.mp4
-
-# 左下角aplayer播放器配置 主要改id和server这两项，修改详见[aplayer文档] 【改】
-aplayer: 
-  id: 2660651585
-  server: netease
-  type: playlist
-  fixed: true
-  mini: false
-  autoplay: false
-  loop: all
-  order: random
-  preload: auto
-  volume: 0.7
-  mutex: true
-
-# Valine评论配置【改】
-valine: true
-v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
-v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ</code></pre>
-<h2 id="分类页和标签页配置"><a href="#分类页和标签页配置" class="headerlink" title="分类页和标签页配置"></a>分类页和标签页配置</h2><h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b0gucy9j31060jih76.jpg" alt></p>
-<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07azb2399j31040jgazs.jpg" alt></p>
-<p>配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。</p>
-<pre><code class="yml">#category
-# 按分类名创建
-技术:
-    #中文标题
-    zh: 野生技术协会 
-    # 英文标题
-    en: Geek – Only for Love
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg
-生活:
-    zh: 生活
-    en: live
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/writing.jpg
-
-#tag
-# 标签名即是标题
-悦读:
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg</code></pre>
-<h2 id="单页面封面配置"><a href="#单页面封面配置" class="headerlink" title="单页面封面配置"></a>单页面封面配置</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b1pi619j31080jge4u.jpg" alt><br>如留言板页面页面，位于source下的comment下，打开index.md如下：</p>
-<pre><code class="md">---
-title: comment
-date: 2018-12-20 23:13:48
-keywords: 留言板
-description: 
-comments: true
-# 在这里配置单页面头部图片，自定义替换哦~
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
----</code></pre>
-<h2 id="单页面配置"><a href="#单页面配置" class="headerlink" title="单页面配置"></a>单页面配置</h2><h3 id="番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07b2gyx60j31090jjahj.jpg" alt></p>
-<pre><code class="yml">---
-layout: bangumi
-title: bangumi
-comments: false
-date: 2019-02-10 21:32:48
-keywords:
-description:
-bangumis:
-  # 番组图片
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-  # 番组名
-    title: 朝花夕誓——于离别之朝束起约定之花
-  # 追番状态 （追番ing/已追完）
-    status: 已追完
-  # 追番进度
-    progress: 100
-  # 番剧日文名称
-    jp: さよならの朝に約束の花をかざろう
-  # 放送时间
-    time: 放送时间: 2018-02-24 SUN.
-  # 番剧介绍
-    desc:  住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-    title: 朝花夕誓——于离别之朝束起约定之花
-    status: 已追完
-    progress: 50
-    jp: さよならの朝に約束の花をかざろう
-    time: 放送时间: 2018-02-24 SUN.
-    desc: 住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
----</code></pre>
-<h3 id="友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b39tleej31080jhjv1.jpg" alt></p>
-<pre><code class="yml">---
-layout: links
-title: links
-# 创建日期，可以改下
-date: 2018-12-19 23:11:06 
-# 图片上的标题，自定义修改
-keywords: 友人帐 
-description: 
-# true/false 开启/关闭评论
-comments: true 
-# 页面头部图片，自定义修改
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg 
-# 友链配置
-links: 
-  # 类型分组
-  - group: 个人项目
-    # 类型简介
-    desc: 充分说明这家伙是条咸鱼 &lt; (￣︶￣)&gt;
-    items:
-    # 友链链接
-    - url: https://shino.cc/fgvf
-    # 友链头像
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-    # 友链站点名
-      name: Google
-    # 友链介绍  下面雷同
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-  # 类型分组...
-  - group: 小伙伴们
-    desc: 欢迎交换友链 ꉂ(ˊᗜˋ)
-    items:
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
----</code></pre>
-<h2 id="写文章配置"><a href="#写文章配置" class="headerlink" title="写文章配置"></a>写文章配置</h2><p>主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：</p>
-<pre><code class="md">{% bili video_id [page] %}</code></pre>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-bili/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-bili</a>。</p>
-<p>hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下：</p>
-<pre><code class="md">{% fb_img src [caption] %}</code></pre>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-fancybox_img</a></p>
-<h2 id="还有啥，一时想不起来……"><a href="#还有啥，一时想不起来……" class="headerlink" title="还有啥，一时想不起来……"></a>还有啥，一时想不起来……</h2><p>To be continued…</p>
+/**
+*  前面设置imageView的frame时，origin为(0, 0)，显示时会先显示左下角内容，
+*  不符合习惯，所以计算其左上角显示的点，利用scrollView的api滚动到对应位置。
+*/
+NSPoint topleftPoint = NSMakePoint(0., imageView.frame.size.height - self.scrollView.contentView.frame.size.height);
+[self.scrollView.contentView scrollToPoint:topleftPoint];</code></pre></li>
+<li><p>下面是修改不同bounds内容对应的效果：</p>
+<ul>
+<li><p>修改scrollView的bounds</p>
+<pre><code>- (IBAction)onButtonClicked:(id)sender {
+   NSRect rect = self.scrollView.bounds;
+   rect.origin.x += 50;
+   self.scrollView.bounds = rect;
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_01.gif" alt="修改scrollView的bounds的x"></p>
+<p>实际整个<code>contentView</code>(<code>doucumentView</code> + 两个滚动条)都移动了，而<code>contnetView</code>内部视图相对布局没有改变。</p>
+<pre><code>- (IBAction)onButtonClicked:(id)sender {
+   NSRect rect = self.scrollView.bounds;
+   rect.size.width *= 2;
+   rect.size.height *= 2;
+   self.scrollView.bounds = rect;
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_02.gif" alt="修改scrollView的bounds的size"></p>
+<p>整个<code>contentView</code>缩小了。(其父视图坐标系统bounds的size加大)</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>修改其contentView的bounds</p>
+<pre><code>- (IBAction)onButtonClicked:(id)sender {
+   NSRect rect = self.scrollView.contentView.bounds;
+   rect.origin.x += 50;
+   self.scrollView.contentView.bounds = rect;
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_03.gif" alt="修改其contentView的bounds的x"></p>
+<p>修改<code>contnetView</code>的bouds的origin，图片移动，其效果等于拖动滚动条。</p>
+<pre><code>- (IBAction)onButtonClicked:(id)sender {
+   NSRect rect = self.scrollView.contentView.bounds;
+   rect.size.width *= 2;
+   rect.size.height *= 2;
+   self.scrollView.contentView.bounds = rect;
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_04.gif" alt="修改其contentView的bounds的size"></p>
+<p>修改<code>contnetView</code>的bouds的size，图片缩小/放大，其效果等于给scrollView加上一个放大缩小按钮。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>修改其documentView的bounds</p>
+<pre><code>- (IBAction)onButtonClicked:(id)sender {
+   NSRect rect = self.scrollView.documentView.bounds;
+   rect.origin.x += 50;
+   rect.size.width *= 2;
+   self.scrollView.documentView.bounds = rect;
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_08.gif" alt="修改其documentView的bounds的size"><br>修改<code>documentView</code>的bounds，可以看见图片似乎和修改<code>contnetView</code>的bounds效果一样，但是注意到滚动条位置，可以发现我们之前总结的没有问题，修改<code>doucuemntView</code>的bounds后，根其同级的滚动条是没有影响的，只会影响<code>documentView</code>内呈现内容的视图(就是它的子视图)的位置！</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>通篇我们只能总结两句话：</p>
+<ul>
+<li>frame决定视图在其父视图中的位置和大小。</li>
+<li>bounds决定视图本身的坐标系统，影响其子视图的位置和大小。(iOS中bounds和frame的size是保持一致的，很不一样)</li>
+</ul>
+<p>而在实际探究中我发现当我们学习某一常用概念时，很可能会想当然地接受，导致没有深究，而忽略了一些细节。 </p>
+<p><a href="https://github.com/hhxlz98/CodeTrain" target="_blank" rel="noopener">demo下载</a><br><strong>如有疏忽和错误之处，欢迎指正！</strong></p>
 
         </div>
         <!-- .entry-content -->
@@ -749,16 +616,16 @@ links:
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="hojun.cn" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+          <a href="https://hhxlz98.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg" itemprop="image" alt="hhxlz98" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="hojun.cn" itemprop="url" rel="author">hojun</a>
+            <a href="https://hhxlz98.github.io" itemprop="url" rel="author">hhxlz98</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+        <p><i class="iconfont icon-write"></i></p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
@@ -898,7 +765,7 @@ $(document).ready(function() {
   </section>
   <div id="mo-nav" class="">
   <div class="m-avatar">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
   </div>
   <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">瓜皮hhxlz98</p>
   <p style="text-align: center; word-spacing: 20px;">
