@@ -73,11 +73,11 @@
     <div class="focusinfo no-select">
       <div class="header-tou">
         <a href="https://hhxlz98.github.io">
-          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.png">
         </a>
       </div>
       <div class="header-info">
-        <p>Live your life with passion! With some drive!</p>
+        <p>Just do something right!</p>
         <div class="top-social_v2">
           <li id="bg-pre">
             <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
@@ -389,7 +389,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/photo_001_01.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/photo_001_01.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/photo_001_01.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/photo_001_01.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -397,7 +397,7 @@
       <p class="entry-census">
         <span>
           <a href="https://hhxlz98.github.io">
-            <img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
+            <img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.png">
           </a>
         </span>
         <span>
@@ -425,7 +425,7 @@
 <li>初学时仅凭看一下两者的定义就想在实际中自如应用是很难的，使用时可能临场蒙对，但是你不能保证每一次都可以猜对，所以对于我个人来说有必要对其的使用进行实际练习和总结，对其产生清晰的认识。</li>
 <li>其外，目前网络上大部分博客资料都是针对iOS的，Mac虽然与其有一定相似性但是我个人认为还是有必要单独写一篇针对Mac的讲解，毕竟作为一个Mac开发初学者，经历过查阅资料只有针对iOS开发的窘境，而实际使用又需要自己去探索Cocoa是否支持，操作起来有什么差异等等。</li>
 </ul>
-<h2 id="二、Mac的坐标系统"><a href="#二、Mac的坐标系统" class="headerlink" title="二、Mac的坐标系统"></a>二、Mac的坐标系统</h2><p>OSX系统中视图坐标系统：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_01.png" alt="Mac坐标系统"><br>是不是和数学中常用的坐标轴是一致的，但是可能对于很多习惯iOS系统视图坐标的人来说，可能更习惯视图坐标原地那在左上角，可以通过重写视图的<code>isFlipped</code>函数设置：</p>
+<h2 id="二、Mac的坐标系统"><a href="#二、Mac的坐标系统" class="headerlink" title="二、Mac的坐标系统"></a>二、Mac的坐标系统</h2><p>OSX系统中视图坐标系统：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_01.png" alt="Mac坐标系统"><br>是不是和数学中常用的坐标轴是一致的，但是可能对于很多习惯iOS系统视图坐标的人来说，可能更习惯视图坐标原地那在左上角，可以通过重写视图的<code>isFlipped</code>函数设置：</p>
 <pre><code>- (BOOL)isFlipped{              //重写在自定义的NSView子类  
     return YES;
 }</code></pre><p>注：该方法需重写在自定义的NSView的子类中，同时它只能影响以该视图为父视图的视图（下面有例子）。</p>
@@ -454,7 +454,7 @@ NSView *redView = [[NSView alloc] initWithFrame:NSMakeRect(20, 20, 50, 100)];
 redView.wantsLayer = YES;
 [redView.layer setBackgroundColor:[NSColor redColor].CGColor];
 /* 将redView作为blueView的子视图 */
-[blueView addSubview:redView];</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_02.png" alt="frame实例"></p>
+[blueView addSubview:redView];</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_02.png" alt="frame实例"></p>
 <ul>
 <li>blueView是整个窗口的<code>contnetView</code>的子视图，所以其frame的坐标的指定原点为<code>contnentView</code>的原点；</li>
 <li>同理redView是blueView的子视图，其frame设置的是在blueView的坐标系中的位置；</li>
@@ -462,7 +462,7 @@ redView.wantsLayer = YES;
 </ul>
 <hr>
 <ul>
-<li><p>flipped视图的区别：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_03.png" alt="flipped视图实例"><br>其中代码实现的唯一改动是blueView是我自定义重写了isFlipped函数的NSView的子类。可以看见当设置blueView的frame时，contnetView的坐标系不变，所以blueView还是在原位置；而blueView视图坐标系统改变导致其下子视图位置改变。</p>
+<li><p>flipped视图的区别：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_03.png" alt="flipped视图实例"><br>其中代码实现的唯一改动是blueView是我自定义重写了isFlipped函数的NSView的子类。可以看见当设置blueView的frame时，contnetView的坐标系不变，所以blueView还是在原位置；而blueView视图坐标系统改变导致其下子视图位置改变。</p>
 </li>
 <li><p>tips：<br>Q：redView的子视图会有影响吗？<br>A：不会，由于redView的isFlipped返回值仍是NO，所以其子视图还是以其左下角为原点。</p>
 </li>
@@ -482,19 +482,19 @@ NSLog(@&quot;%@&quot;, NSStringFromRect(redView.bounds));
 
 输出：{{0, 0}, {50, 100}}</code></pre><p>可以看出视图的bounds默认origin为(0, 0),size为frame的size(实际中bounds的getter函数就是这么实现的)。</p>
 <hr>
-<p>接下来我们试验一下修改bounds会发生什么：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_04.png" alt="修改bounds"></p>
+<p>接下来我们试验一下修改bounds会发生什么：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_04.png" alt="修改bounds"></p>
 <p>可以看到修改bounds对view本身对frame没有任何影响，那我们尝试在其内加入子视图：</p>
 <ul>
-<li><p>修改origin：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_05.png" alt="修改origin"><br>修改父视图的bounds的origin之后，父视图的位置不变(父视图frame未变且父视图所在坐标系统未变)，而对于其子视图所在坐标系(即父视图坐标系)，虽然子视图frame未变，但是其所在坐标系原点改变，则相同frame下子视图和父视图相对位置发生变化，所以视觉上其显示位置改变。</p>
+<li><p>修改origin：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_05.png" alt="修改origin"><br>修改父视图的bounds的origin之后，父视图的位置不变(父视图frame未变且父视图所在坐标系统未变)，而对于其子视图所在坐标系(即父视图坐标系)，虽然子视图frame未变，但是其所在坐标系原点改变，则相同frame下子视图和父视图相对位置发生变化，所以视觉上其显示位置改变。</p>
 </li>
-<li><p>修改size:<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_01_006.png" alt="修改size"><br>修改父视图的bounds的size后，其子视图大小有明显变换。在本例中，父视图的width变为原来的4/5，即200，而子视图的width为100即其一半，因而子视图的width应该占整个父视图的一半(height同理)，所以实际显示中子视图的size都成比例的增加了！(尽管子视图的frame并没有改变，但是其所在坐标系统的size变了)</p>
+<li><p>修改size:<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_01_006.png" alt="修改size"><br>修改父视图的bounds的size后，其子视图大小有明显变换。在本例中，父视图的width变为原来的4/5，即200，而子视图的width为100即其一半，因而子视图的width应该占整个父视图的一半(height同理)，所以实际显示中子视图的size都成比例的增加了！(尽管子视图的frame并没有改变，但是其所在坐标系统的size变了)</p>
 </li>
 <li><p>bounds的作用<br>经过上例的验证后我们可以发现，官方对于bounds的解释如此简练，光凭其定义想要去理解是有难度的。但如果从其作用的角度，我们可以将bounds定义为：决定视图本身的坐标系统，该坐标系统会影响其内视图的呈现，即影响视图的子视图。</p>
 </li>
 </ul>
 <h2 id="五、实例：NSScrollView解析"><a href="#五、实例：NSScrollView解析" class="headerlink" title="五、实例：NSScrollView解析"></a>五、实例：NSScrollView解析</h2><p>官方提供的控件——滚动视图中应用了bounds的一定特性，在此进行解析，了解滚动视图的实现和bounds的应用。</p>
 <ul>
-<li>NSScrollView控件的结构：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/img_001_07.png" alt="scrollView结构"><br>上图可以看到一个滚动视图控件包含好几个部分，其中绿色部分(NSView)就是我们承载显示内容的部分，其size一般都比<code>ContentView</code>大，这样才有滚动显示的需求。</li>
+<li>NSScrollView控件的结构：<br><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/img_001_07.png" alt="scrollView结构"><br>上图可以看到一个滚动视图控件包含好几个部分，其中绿色部分(NSView)就是我们承载显示内容的部分，其size一般都比<code>ContentView</code>大，这样才有滚动显示的需求。</li>
 </ul>
 <hr>
 <p>先将一个image添加到scrollView的<code>documentView</code>中，给视图添加一个按钮，点击按钮修改不同View的bounds查看效果：</p>
@@ -521,14 +521,14 @@ NSPoint topleftPoint = NSMakePoint(0., imageView.frame.size.height - self.scroll
    NSRect rect = self.scrollView.bounds;
    rect.origin.x += 50;
    self.scrollView.bounds = rect;
-}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_01.gif" alt="修改scrollView的bounds的x"></p>
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/gif_001_01.gif" alt="修改scrollView的bounds的x"></p>
 <p>实际整个<code>contentView</code>(<code>doucumentView</code> + 两个滚动条)都移动了，而<code>contnetView</code>内部视图相对布局没有改变。</p>
 <pre><code>- (IBAction)onButtonClicked:(id)sender {
    NSRect rect = self.scrollView.bounds;
    rect.size.width *= 2;
    rect.size.height *= 2;
    self.scrollView.bounds = rect;
-}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_02.gif" alt="修改scrollView的bounds的size"></p>
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/gif_001_02.gif" alt="修改scrollView的bounds的size"></p>
 <p>整个<code>contentView</code>缩小了。(其父视图坐标系统bounds的size加大)</p>
 </li>
 </ul>
@@ -539,14 +539,14 @@ NSPoint topleftPoint = NSMakePoint(0., imageView.frame.size.height - self.scroll
    NSRect rect = self.scrollView.contentView.bounds;
    rect.origin.x += 50;
    self.scrollView.contentView.bounds = rect;
-}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_03.gif" alt="修改其contentView的bounds的x"></p>
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/gif_001_03.gif" alt="修改其contentView的bounds的x"></p>
 <p>修改<code>contnetView</code>的bouds的origin，图片移动，其效果等于拖动滚动条。</p>
 <pre><code>- (IBAction)onButtonClicked:(id)sender {
    NSRect rect = self.scrollView.contentView.bounds;
    rect.size.width *= 2;
    rect.size.height *= 2;
    self.scrollView.contentView.bounds = rect;
-}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_04.gif" alt="修改其contentView的bounds的size"></p>
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/gif_001_04.gif" alt="修改其contentView的bounds的size"></p>
 <p>修改<code>contnetView</code>的bouds的size，图片缩小/放大，其效果等于给scrollView加上一个放大缩小按钮。</p>
 </li>
 </ul>
@@ -558,7 +558,7 @@ NSPoint topleftPoint = NSMakePoint(0., imageView.frame.size.height - self.scroll
    rect.origin.x += 50;
    rect.size.width *= 2;
    self.scrollView.documentView.bounds = rect;
-}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/gif_001_08.gif" alt="修改其documentView的bounds的size"><br>修改<code>documentView</code>的bounds，可以看见图片似乎和修改<code>contnetView</code>的bounds效果一样，但是注意到滚动条位置，可以发现我们之前总结的没有问题，修改<code>doucuemntView</code>的bounds后，根其同级的滚动条是没有影响的，只会影响<code>documentView</code>内呈现内容的视图(就是它的子视图)的位置！</p>
+}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/blogResource/gif_001_08.gif" alt="修改其documentView的bounds的size"><br>修改<code>documentView</code>的bounds，可以看见图片似乎和修改<code>contnetView</code>的bounds效果一样，但是注意到滚动条位置，可以发现我们之前总结的没有问题，修改<code>doucuemntView</code>的bounds后，根其同级的滚动条是没有影响的，只会影响<code>documentView</code>内呈现内容的视图(就是它的子视图)的位置！</p>
 </li>
 </ul>
 </li>
@@ -616,7 +616,7 @@ NSPoint topleftPoint = NSMakePoint(0., imageView.frame.size.height - self.scroll
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="https://hhxlz98.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg" itemprop="image" alt="hhxlz98" height="70" width="70"></a>
+          <a href="https://hhxlz98.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.png" itemprop="image" alt="hhxlz98" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
@@ -765,7 +765,7 @@ $(document).ready(function() {
   </section>
   <div id="mo-nav" class="">
   <div class="m-avatar">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://cdn.jsdelivr.net/gh/hhxlz98/FileForBlog/img/avatar.png">
   </div>
   <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">瓜皮hhxlz98</p>
   <p style="text-align: center; word-spacing: 20px;">
